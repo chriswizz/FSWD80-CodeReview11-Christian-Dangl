@@ -20,7 +20,7 @@
 <body>
 	<div class ="container-fluid">
 			<?php echo '
-				<a href="upsert.php?action=create"><button type="button" class="btnFix btnFixLeft btn btn-danger border">Create New Item</button></a>
+				<a href="upsert.php?action=create"><button type="button" class="btnFix btnFixLeft btn btn-danger border">Create New "Things To Do"-Item</button></a>
 				<a href="logout.php?logout"><button type="button" class="btnFix btnFixRight btn btn-success border">Log Out</button></a>';
 			?>
 		<table class="table table-striped tableStickyHead" cellspacing= "0" cellpadding="0">
@@ -33,7 +33,9 @@
 					<th>Description</th>
 					<th>Website</th>
 					<th>Category ID</th>
+					<th>Category</th>
 					<th>Todo ID</th>
+					<th>Todo </th>
 					<th>Update</th>
 					<th>Delete</th>
 				</tr>
@@ -66,7 +68,9 @@
 								<td>" . $row['description'] . "</td>
 								<td>" . $row['website'] . "</td>
 								<td>" . $row['category_id'] . "</td>
+								<td>" . $row['category'] . "</td>
 								<td>" . $row['todo_id'] . "</td>
+								<td>" . $row['todo_type'] . "</td>
 								<td>
 									<a href='upsert.php?action=update&item_id=" . $row['item_id'] . "'><button type='button' class='btn btn-success btn-sm btn-sm-size rounded-circle border'><i class='fas fa-pen'></i></button></a>
 								</td>
