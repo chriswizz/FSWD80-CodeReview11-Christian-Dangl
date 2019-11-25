@@ -36,6 +36,9 @@
                 <li class="nav-item">
                     <a href="event.php"><button type="button" class="nav-filter btn border-0 mx-1" value="Event">Events</button></a>
                 </li>
+                <li class="nav-item">
+                    <a href="maps.php"><button type="button" class="nav-filter btn border-0 mx-1" value="Event">Google Maps</button></a>
+                </li>
             </ul>
             <div class="wrapper-sort d-flex">
                 <?php

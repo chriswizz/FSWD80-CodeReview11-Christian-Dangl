@@ -10,9 +10,9 @@
 	$connect = new mysqli($localhost, $username, $password, $dbname);
 
 	// check connection
-	if($connect->connect_error) {
-	    die("<br><font color='red'><b>connection failed: " . $connect->connect_error . "</b></font>");
+	if(!$connect->set_charset("utf8")) {
+	    die("<br><font color='red'><b>Error loading charset utf-8: " . $connect->connect_error . "</b></font>");
 	} else {
-	    // echo "Successfully Connected";
+	    $connect->character_set_name();
 	}
 ?>
