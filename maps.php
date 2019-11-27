@@ -11,8 +11,9 @@
   $addresses = mysqli_fetch_all($result);
 
   foreach ($addresses as $address) {
-    $addressesStr[] = implode(",", $address);
+    $addressesStr[] = str_replace(" ", "", implode(",", $address));
   }
+  var_dump($addressesStr);
   // $addressesJSON = JSON_encode($addressesStr, JSON_UNESCAPED_UNICODE);
   // echo $addressesJSON;
 ?>
@@ -44,7 +45,7 @@
         document.getElementById('map'), {zoom: 13, center: vienna});
 
         <?php
-          for ($i=0; $i<3; $i++) {
+          for ($i=0; $i<sizeof($addressesStr); $i++) {
             $addressStr = $addressesStr[$i];
             $url = "https://maps.google.com/maps/api/geocode/xml?address=".$addressStr."&key=AIzaSyBtjaD-saUZQ47PbxigOg25cvuO6_SuX3M";
             $response = curl_get($url);
